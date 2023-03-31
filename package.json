@@ -1,0 +1,31 @@
+{
+  "name": "ignite-node_project-02",
+  "version": "1.0.0",
+  "description": "Construir uma API para sistemas de check-in, ex: Gympass.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build/server.js",
+    "dev": "tsx watch src/server.ts",
+    "build": "tsup src --out-dir build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "16.0.3",
+    "fastify": "4.15.0",
+    "pino": "8.11.0",
+    "pino-pretty": "10.0.0",
+    "zod": "3.21.4"
+  },
+  "devDependencies": {
+    "@types/node": "18.15.11",
+    "@typescript-eslint/eslint-plugin": "5.57.0",
+    "@typescript-eslint/parser": "5.57.0",
+    "eslint": "8.37.0",
+    "tsup": "6.7.0",
+    "tsx": "3.12.6",
+    "typescript": "5.0.3"
+  }
+}
