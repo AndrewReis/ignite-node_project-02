@@ -7,12 +7,14 @@
     "start": "node build/server.js",
     "dev": "tsx watch src/server.ts",
     "build": "tsup src --out-dir build",
+    "lint": "eslint . --ext .ts --fix --ignore-path .gitignore",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "4.12.0",
     "dotenv": "16.0.3",
     "fastify": "4.15.0",
     "pino": "8.11.0",
@@ -24,6 +26,7 @@
     "@typescript-eslint/eslint-plugin": "5.57.0",
     "@typescript-eslint/parser": "5.57.0",
     "eslint": "8.37.0",
+    "prisma": "4.12.0",
     "tsup": "6.7.0",
     "tsx": "3.12.6",
     "typescript": "5.0.3"
