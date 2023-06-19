@@ -2,9 +2,15 @@
 ## Proposta do projeto
   Construir uma API para sistemas de check-in, ex: Gympass.
 
+# Comandos cli
 ## Prisma comandos (dev)
 > npx prisma migrate dev
+
+## Docker
+> docker-compose up
+> docker-compose stop
 ---
+# Engenharia de Software
 ## Requisitos Funcionais
 - [ ] Deve ser possível se cadastrar;
 - [ ] Deve ser possível se autenticar;
