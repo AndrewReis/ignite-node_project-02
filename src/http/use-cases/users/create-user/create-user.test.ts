@@ -1,16 +1,20 @@
-import { describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { compare } from 'bcryptjs';
 
 import { InMemoryUserRepository } from '@/repositories/users/in-memory-repository';
-import { CreateUserUseCase } from '@/http/use-cases/users/create-user';
+import { CreateUserUseCase } from '@/http/use-cases/users/create-user/_create-user';
 import { AppError } from '@/appError';
 
-describe('Create User use-case', async () => {
-	it('should be able create user.', async () => {
-		const repository = new InMemoryUserRepository();
-		const useCase    = new CreateUserUseCase(repository);
+let userRepository: InMemoryUserRepository;
+let sut: CreateUserUseCase;
 
-		const { user } = await useCase.execute({
+describe('Create User use-case', async () => {
+	beforeEach(() => {
+		userRepository = new InMemoryUserRepository();
+		sut    				= new CreateUserUseCase(userRepository);
+	});
+	it('should be able create user.', async () => {
+		const { user } = await sut.execute({
 			name: 'Test',
 			email: 'test@test.com',
 			password: '123456'
@@ -19,10 +23,7 @@ describe('Create User use-case', async () => {
 	});
 
 	it('should be generate hash for password user.', async () => {
-		const repository = new InMemoryUserRepository();
-		const useCase    = new CreateUserUseCase(repository);
-
-		const { user } = await useCase.execute({
+		const { user } = await sut.execute({
 			name: 'Test',
 			email: 'test@test.com',
 			password: '123456'
@@ -34,17 +35,14 @@ describe('Create User use-case', async () => {
 	});
 
 	it('should not be able to create user with same e-mail.', async () => {
-		const repository = new InMemoryUserRepository();
-		const useCase    = new CreateUserUseCase(repository);
-
-		await useCase.execute({
+		await sut.execute({
 			name: 'Test',
 			email: 'test@test.com',
 			password: '123456'
 		});
 
 		expect(async () => {
-			await useCase.execute({
+			await sut.execute({
 				name: 'Test',
 				email: 'test@test.com',
 				password: '123456'

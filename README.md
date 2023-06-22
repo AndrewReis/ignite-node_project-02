@@ -1,3 +1,17 @@
+- prisma
+- test
+  - units
+    - users
+      - create, list, update, delete
+  - integrations
+    - users
+      - persist, retrieve
+- src
+  - api
+    - controllers, use-cases, routes, etc...
+  - services
+  
+
 # API SOLID
 ## Proposta do projeto
   Construir uma API para sistemas de check-in, ex: Gympass.
