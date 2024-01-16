@@ -1,20 +1,10 @@
-- prisma
-- test
-  - units
-    - users
-      - create, list, update, delete
-  - integrations
-    - users
-      - persist, retrieve
-- src
-  - api
-    - controllers, use-cases, routes, etc...
-  - services
-  
+# Rocktseat Ignite Node.js - API SOLID
 
-# API SOLID
-## Proposta do projeto
-  Construir uma API para sistemas de check-in, ex: Gympass.
+## Proposta do projeto:
+  Construir uma API para sistemas de check-in.
+  **exemplo: Gympass**
+---
+
 
 # Comandos cli
 ## Prisma comandos (dev)
@@ -23,7 +13,9 @@
 ## Docker
 > docker-compose up
 > docker-compose stop
+
 ---
+
 # Engenharia de Software
 ## Requisitos Funcionais
 - [ ] Deve ser possível se cadastrar;
